@@ -1,4 +1,4 @@
-package io.github.s0nata;
+package io.github.spanichella_s0nata;
 
 import static org.junit.Assert.assertTrue;
 

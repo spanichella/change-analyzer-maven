@@ -1,4 +1,4 @@
-package io.github.s0nata;
+package io.github.spanichella_s0nata;
 
 import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.actions.EditScriptGenerator;
@@ -6,10 +6,7 @@ import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
 import com.github.gumtreediff.actions.model.Action;
 import com.github.gumtreediff.client.Run;
 import com.github.gumtreediff.gen.TreeGenerators;
-import com.github.gumtreediff.gen.c.*;
 import com.github.gumtreediff.gen.c.CTreeGenerator;
-import com.github.gumtreediff.gen.srcml.*;
-import com.github.gumtreediff.gen.javaparser.JavaParserGenerator;
 import com.github.gumtreediff.io.TreeIoUtils;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.matchers.MappingStore;
@@ -34,8 +31,8 @@ public class ExamplesDemoLanguageC {
   //private static String srcFilePath = "resources/SampleFile0.java";
   //private static String dstFilePath = "resources/SampleFile1.java";
 
-  private static String srcFilePathC = "resources/MemPool-v1.c";
-  private static String dstFilePathC = "resources/MemPool-v2.c";
+  private static String srcFilePathC = "resources/c-class-v3.c";
+  private static String dstFilePathC = "resources/c-class-v4.c";
 
   private static void initGTD () {
     Run.initClients();

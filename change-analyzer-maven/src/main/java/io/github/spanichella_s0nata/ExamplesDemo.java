@@ -1,4 +1,4 @@
-package io.github.s0nata;
+package io.github.spanichella_s0nata;
 
 import com.github.gumtreediff.actions.EditScript;
 import com.github.gumtreediff.actions.EditScriptGenerator;
