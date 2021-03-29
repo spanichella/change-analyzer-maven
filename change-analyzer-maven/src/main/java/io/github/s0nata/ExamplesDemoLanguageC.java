@@ -7,6 +7,7 @@ import com.github.gumtreediff.actions.model.Action;
 import com.github.gumtreediff.client.Run;
 import com.github.gumtreediff.gen.TreeGenerators;
 import com.github.gumtreediff.gen.c.*;
+import com.github.gumtreediff.gen.c.CTreeGenerator;
 import com.github.gumtreediff.gen.srcml.*;
 import com.github.gumtreediff.gen.javaparser.JavaParserGenerator;
 import com.github.gumtreediff.io.TreeIoUtils;
@@ -20,7 +21,6 @@ import com.github.gumtreediff.tree.TreeContext;
 import java.io.IOException;
 import java.util.Set;
 
-
 /**
  * to run the automatically created JAR from the command line do:
  *
@@ -31,8 +31,11 @@ import java.util.Set;
  */
 public class ExamplesDemoLanguageC {
 
-  private static String srcFilePath = "resources/SampleFile0.java";
-  private static String dstFilePath = "resources/SampleFile1.java";
+  //private static String srcFilePath = "resources/SampleFile0.java";
+  //private static String dstFilePath = "resources/SampleFile1.java";
+
+  private static String srcFilePathC = "resources/MemPool-v1.c";
+  private static String dstFilePathC = "resources/MemPool-v2.c";
 
   private static void initGTD () {
     Run.initClients();
@@ -52,14 +55,14 @@ public class ExamplesDemoLanguageC {
     initGTD();
 
     System.out.println("\nEXAMPLE 1: Parsing a file:\n");
-    exampleParsing(srcFilePath);
+    exampleParsingC(srcFilePathC);
     System.out.println("\nEXAMPLE 2: Getting the mappings between two trees:\n");
-    exampleMapping(srcFilePath, dstFilePath);
+    exampleMappingC(srcFilePathC, dstFilePathC);
     System.out.println("\nEXAMPLE 3: Computing the actions between two trees:\n");
-    exampleActions(srcFilePath, dstFilePath);
+    exampleActionsC(srcFilePathC, dstFilePathC);
   }
 
-  private static void exampleParsing(String filePath) {
+  private static void exampleParsingC(String filePath) {
     try {
       // FIRST, get the parse tree and its root
       // OPTION 1: automatic parsing using generator registry
@@ -69,10 +72,10 @@ public class ExamplesDemoLanguageC {
       Tree t1 = tc1.getRoot();
       // OPTION 2: parsing using a specific generator
       // -- instantiates and applies the JavaParser generator
-      TreeContext tc2 = new JavaParserGenerator().generateFrom().file(filePath);
+      TreeContext tc2 = new CTreeGenerator().generateFrom().file(filePath);
       Tree t2 = tc2.getRoot(); // retrieves the root of the tree
       // OPTION 2+: can be a one-liner
-      Tree t3 = new JavaParserGenerator().generateFrom().file(filePath).getRoot();
+      Tree t3 = new CTreeGenerator().generateFrom().file(filePath).getRoot();
 
       // SECOND, display the tree
       Tree curTree = t1;
@@ -90,7 +93,7 @@ public class ExamplesDemoLanguageC {
     }
   }
 
-  private static void exampleMapping(String srcFile, String dstFile) {
+  private static void exampleMappingC(String srcFile, String dstFile) {
     // input data
     Tree src;
     Tree dst;
@@ -115,7 +118,7 @@ public class ExamplesDemoLanguageC {
     }
   }
 
-  private static void exampleActions(String srcFile, String dstFile) {
+  private static void exampleActionsC(String srcFile, String dstFile) {
     // input data
     Tree src;
     Tree dst;
