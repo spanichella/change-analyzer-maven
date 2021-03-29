@@ -6,8 +6,7 @@ import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
 import com.github.gumtreediff.actions.model.Action;
 import com.github.gumtreediff.client.Run;
 import com.github.gumtreediff.gen.TreeGenerators;
-import com.github.gumtreediff.gen.c.CTreeGenerator;
-import com.github.gumtreediff.gen.srcml.SrcmlCTreeGenerator;
+import com.github.gumtreediff.gen.javaparser.JavaParserGenerator;
 import com.github.gumtreediff.io.TreeIoUtils;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.matchers.MappingStore;
@@ -19,6 +18,7 @@ import com.github.gumtreediff.tree.TreeContext;
 import java.io.IOException;
 import java.util.Set;
 
+
 /**
  * to run the automatically created JAR from the command line do:
  *
@@ -27,10 +27,10 @@ import java.util.Set;
  *
  * see also @link{https://stackoverflow.com/questions/9689793/cant-execute-jar-file-no-main-manifest-attribute}
  */
-public class ExamplesDemoLanguageC {
+public class ExamplesDemoLanguageJava {
 
-  private static String srcFilePathC = "resources/c-class-v3.c";
-  private static String dstFilePathC = "resources/c-class-v4.c";
+  private static String srcFilePath = "resources/SampleFile0.java";
+  private static String dstFilePath = "resources/SampleFile1.java";
 
   private static void initGTD () {
     Run.initClients();
@@ -50,14 +50,14 @@ public class ExamplesDemoLanguageC {
     initGTD();
 
     System.out.println("\nEXAMPLE 1: Parsing a file:\n");
-    exampleParsingC(srcFilePathC);
+    exampleParsing(srcFilePath);
     System.out.println("\nEXAMPLE 2: Getting the mappings between two trees:\n");
-    exampleMappingC(srcFilePathC, dstFilePathC);
+    exampleMapping(srcFilePath, dstFilePath);
     System.out.println("\nEXAMPLE 3: Computing the actions between two trees:\n");
-    exampleActionsC(srcFilePathC, dstFilePathC);
+    exampleActions(srcFilePath, dstFilePath);
   }
 
-  private static void exampleParsingC(String filePath) {
+  private static void exampleParsing(String filePath) {
     try {
       // FIRST, get the parse tree and its root
       // OPTION 1: automatic parsing using generator registry
@@ -67,10 +67,10 @@ public class ExamplesDemoLanguageC {
       Tree t1 = tc1.getRoot();
       // OPTION 2: parsing using a specific generator
       // -- instantiates and applies the JavaParser generator
-      TreeContext tc2 = new SrcmlCTreeGenerator().generateFrom().file(filePath);
+      TreeContext tc2 = new JavaParserGenerator().generateFrom().file(filePath);
       Tree t2 = tc2.getRoot(); // retrieves the root of the tree
       // OPTION 2+: can be a one-liner
-      Tree t3 = new SrcmlCTreeGenerator().generateFrom().file(filePath).getRoot();
+      Tree t3 = new JavaParserGenerator().generateFrom().file(filePath).getRoot();
 
       // SECOND, display the tree
       Tree curTree = t1;
@@ -88,7 +88,7 @@ public class ExamplesDemoLanguageC {
     }
   }
 
-  private static void exampleMappingC(String srcFile, String dstFile) {
+  private static void exampleMapping(String srcFile, String dstFile) {
     // input data
     Tree src;
     Tree dst;
@@ -113,7 +113,7 @@ public class ExamplesDemoLanguageC {
     }
   }
 
-  private static void exampleActionsC(String srcFile, String dstFile) {
+  private static void exampleActions(String srcFile, String dstFile) {
     // input data
     Tree src;
     Tree dst;

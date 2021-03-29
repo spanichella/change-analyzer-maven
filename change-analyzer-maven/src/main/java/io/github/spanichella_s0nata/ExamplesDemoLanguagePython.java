@@ -6,7 +6,7 @@ import com.github.gumtreediff.actions.SimplifiedChawatheScriptGenerator;
 import com.github.gumtreediff.actions.model.Action;
 import com.github.gumtreediff.client.Run;
 import com.github.gumtreediff.gen.TreeGenerators;
-import com.github.gumtreediff.gen.javaparser.JavaParserGenerator;
+import com.github.gumtreediff.gen.python.PythonTreeGenerator;
 import com.github.gumtreediff.io.TreeIoUtils;
 import com.github.gumtreediff.matchers.Mapping;
 import com.github.gumtreediff.matchers.MappingStore;
@@ -18,7 +18,6 @@ import com.github.gumtreediff.tree.TreeContext;
 import java.io.IOException;
 import java.util.Set;
 
-
 /**
  * to run the automatically created JAR from the command line do:
  *
@@ -27,10 +26,10 @@ import java.util.Set;
  *
  * see also @link{https://stackoverflow.com/questions/9689793/cant-execute-jar-file-no-main-manifest-attribute}
  */
-public class ExamplesDemo {
+public class ExamplesDemoLanguagePython {
 
-  private static String srcFilePath = "resources/SampleFile0.java";
-  private static String dstFilePath = "resources/SampleFile1.java";
+  private static String srcFilePathPython = "resources/code-v3.py";
+  private static String dstFilePathPython = "resources/code-v4.py";
 
   private static void initGTD () {
     Run.initClients();
@@ -50,14 +49,14 @@ public class ExamplesDemo {
     initGTD();
 
     System.out.println("\nEXAMPLE 1: Parsing a file:\n");
-    exampleParsing(srcFilePath);
+    exampleParsingPython(srcFilePathPython);
     System.out.println("\nEXAMPLE 2: Getting the mappings between two trees:\n");
-    exampleMapping(srcFilePath, dstFilePath);
+    exampleMappingPython(srcFilePathPython, dstFilePathPython);
     System.out.println("\nEXAMPLE 3: Computing the actions between two trees:\n");
-    exampleActions(srcFilePath, dstFilePath);
+    exampleActionsPython(srcFilePathPython, dstFilePathPython);
   }
 
-  private static void exampleParsing(String filePath) {
+  private static void exampleParsingPython(String filePath) {
     try {
       // FIRST, get the parse tree and its root
       // OPTION 1: automatic parsing using generator registry
@@ -67,10 +66,10 @@ public class ExamplesDemo {
       Tree t1 = tc1.getRoot();
       // OPTION 2: parsing using a specific generator
       // -- instantiates and applies the JavaParser generator
-      TreeContext tc2 = new JavaParserGenerator().generateFrom().file(filePath);
+      TreeContext tc2 = new PythonTreeGenerator().generateFrom().file(filePath);
       Tree t2 = tc2.getRoot(); // retrieves the root of the tree
       // OPTION 2+: can be a one-liner
-      Tree t3 = new JavaParserGenerator().generateFrom().file(filePath).getRoot();
+      Tree t3 = new PythonTreeGenerator().generateFrom().file(filePath).getRoot();
 
       // SECOND, display the tree
       Tree curTree = t1;
@@ -88,7 +87,7 @@ public class ExamplesDemo {
     }
   }
 
-  private static void exampleMapping(String srcFile, String dstFile) {
+  private static void exampleMappingPython(String srcFile, String dstFile) {
     // input data
     Tree src;
     Tree dst;
@@ -113,7 +112,7 @@ public class ExamplesDemo {
     }
   }
 
-  private static void exampleActions(String srcFile, String dstFile) {
+  private static void exampleActionsPython(String srcFile, String dstFile) {
     // input data
     Tree src;
     Tree dst;
