@@ -63,3 +63,7 @@ Configure `maven` to authenticate GithubPackages as a valid package source:
 ### IDE
 
 The projects are developed in IntelliJ IDEA 2020.3.3 (Community Edition), so there are various build and run configurations available for each project in respective `gumtreediff-examples/PROJECTNAME/.idea/runConfigurations/` folders.
+
+### EXAMPLES
+If everything works as expected you should be able to run the Code Classes under:
+- https://github.com/spanichella/change-analyzer-maven/tree/main/change-analyzer-maven/src/main/java/io/github/spanichella_s0nata/
