@@ -2,7 +2,7 @@
 
 ## This repository
 
-This small repository contains examples on how to use a code differencing tool [GumTreeDiff](https://github.com/GumTreeDiff/gumtree) (`GTD`) from Java, C, C++, JavaScript and Python source code through APIs.
+This small repository contains examples on how to use a code differencing tool [GumTreeDiff](https://github.com/GumTreeDiff/gumtree) (`GTD`) from Java, C, C++, C#, JavaScript and Python source code through APIs.
 
 Folder `gumtreediff-api-examples-maven` contains a sample `maven` project that runs [API use examples](https://github.com/GumTreeDiff/gumtree/wiki/GumTree-API).
 
