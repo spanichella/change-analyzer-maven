@@ -27,7 +27,7 @@
       <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    <!-- https://maven.pkg.github.com/gumtreediff/gumtree/* -->
+    <!-- https://maven.pkg.github.com/gumtreediff/gumtree/*  or https://github.com/orgs/GumTreeDiff/packages?repo_name=gumtree -->
     <dependency>
       <groupId>com.github.gumtreediff</groupId>
       <artifactId>client</artifactId>

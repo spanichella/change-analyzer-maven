@@ -1,13 +1,9 @@
 // the hello world program
-console.log('Hello World 2');
-console.log('Hello');
+console.log('Hello World');
 
-const num1 = 5;
-const num2 = 3;
+    const num1 = 5;
 
-// add two numbers
-const sum = num1 + num2;
+    const num2 = 3;
 
-// display the sum
-console.log('The sum of ' + num1 + ' and ' + num2 + ' is: ' + sum);
+
 
