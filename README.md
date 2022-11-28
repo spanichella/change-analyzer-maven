@@ -30,7 +30,7 @@ Go to your account and generate a _personal access token_ (if you already have i
 
   2. In step 6 of the above instructions set the token name to `github-ChangeAnalysis` or any other of your choice
 
-  3. In step 7 of the above instructions set at least the following permissions: `repo`, `read:packages`
+  3. In step 13 of the above instructions set at least the following permissions: `repo`, `read:packages`
 
 **Step 2**
 
