@@ -38,9 +38,9 @@ Configure `maven` to authenticate GithubPackages as a valid package source:
 
   1. Full instructions are available [here](https://docs.github.com/en/packages/guides/configuring-apache-maven-for-use-with-github-packages#authenticating-with-a-personal-access-token), section _Authenticating to GitHub Packages/Authenticating with a personal access token_, but the relevant steps are:
 
-  2. Create or edit the `~/.m2/settings.xml` from the template provided in the above instructions
+    - 2. Create or edit the `~/.m2/settings.xml` from the template provided in the above instructions
 
-  3. Update `repository` and `server` sections of the `settings.xml` to the following values:
+    - 3. Update `repository` and `server` sections of the `settings.xml` to the following values:
 
 ```xml
 <repository>
