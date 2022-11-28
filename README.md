@@ -14,7 +14,7 @@ SDK version 11+ (these projects are developed with `java-11-openjdk-amd64`).
 
 ### Maven build setup
 
-These projects are built with `maven` version 3.6.3.
+These projects are built with `maven` [version 3.6.3](https://archive.apache.org/dist/maven/maven-3/3.6.3/binaries/).
 
 Before building and running any of the projects for the first time please configure the `maven` workflow for `GTD`:
 
