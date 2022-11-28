@@ -24,13 +24,13 @@ If you do not yet have a [GitHub](https://github.com/) account, register there.
 
 **Step 1**
 
-Go to your account and generate a _personal access token_ (if you already have it, make sure it has all necessary permissions - see below):
+Go to your account and generate a _personal access token classic_ (if you already have it, make sure it has all necessary permissions - see below):
 
   1. Follow the instructions [here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token)
 
   2. In step 6 of the above instructions set the token name to `github-ChangeAnalysis` or any other of your choice
 
-  3. In step 13 of the above instructions set at least the following permissions: `repo`, `read:packages`
+  3. In step 7 of the above instructions set at least the following permissions: `repo`, `read:packages`
 
 **Step 2**
 
