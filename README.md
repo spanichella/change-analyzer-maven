@@ -28,7 +28,7 @@ Go to your account and generate a _personal access token_ (if you already have i
 
   1. Follow the instructions [here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token)
 
-  2. In step 6 of the above instructions set the token name to `github-GTD` or any other of your choice
+  2. In step 6 of the above instructions set the token name to `github-ChangeAnalysis` or any other of your choice
 
   3. In step 7 of the above instructions set at least the following permissions: `repo`, `read:packages`
 
